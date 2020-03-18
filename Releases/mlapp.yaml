@@ -17,8 +17,6 @@ spec:
         image: hbai/flying-kube
         ports:
         - containerPort: 8001
-      nodeSelector:
-        target: true
 ---
 apiVersion: v1
 kind: Service
@@ -31,4 +29,4 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8001
-  type: ClusterIP
+  type: NodePort
